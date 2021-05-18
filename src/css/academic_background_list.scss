@@ -1,0 +1,15 @@
+
+
+.academic_background_list {
+    font-size: 14px;
+    margin-right: 50px;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &.active {
+        background-color: #15023a;
+        color: white;
+    }
+
+}
