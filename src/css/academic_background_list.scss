@@ -1,4 +1,4 @@
-
+@import "global.scss";
 
 .academic_background_list {
     font-size: 14px;
@@ -6,9 +6,14 @@
     padding: 7px;
     border-radius: 10px;
     cursor: pointer;
+    overflow: hidden;
+
+    @include mobile{
+        margin: 5px;
+    }
 
     &.active {
-        background-color: #15023a;
+        background-color: $mainColor;
         color: white;
     }
 

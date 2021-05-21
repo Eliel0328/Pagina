@@ -1,5 +1,5 @@
 import '../css/home.scss'
-import man from '../img/man.png'
+import man from '../img/Eliel2.jpeg'
 import down from '../img/down.png'
 
 import { init } from "ityped";

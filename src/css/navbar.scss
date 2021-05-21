@@ -1,8 +1,10 @@
+@import "global.scss";
+
 .navbar{
     width: 100%;
     height: 70px;
     background-color: white;
-    color: #15023a;
+    color: $mainColor;
     position: fixed;
     top: 0;
     z-index: 3;
@@ -31,6 +33,10 @@
                 align-items: center;
                 margin-left: 40px;
 
+                @include mobile{
+                    display: none;
+                }
+
                 .icon {
                     font-size: 18px;
                     margin-right: 5px;
@@ -55,7 +61,7 @@
                 span{
                     width: 100%;
                     height: 3px;
-                    background-color: #15023a;
+                    background-color: $mainColor;
                     transform-origin: left;
                     transition: all 2s ease;
                 }
@@ -64,7 +70,7 @@
     }
 
     &.active{
-        background-color: #15023a;
+        background-color: $mainColor;
         color: white;
 
         .hamburger{

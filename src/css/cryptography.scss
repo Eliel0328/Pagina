@@ -1,0 +1,113 @@
+@import "global.scss";
+
+.cryptography{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+
+    h1{
+        font-size: 50px;
+        font-weight: 400;
+        overflow: hidden;
+        color: crimson;
+
+        @include mobile{
+            font-size: 20px;
+            font-weight: 400;
+        }
+    }
+
+    .container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include mobile{
+            flex-direction: column;
+        }
+
+        .card{
+            width: 250px;
+            height: 70%;
+            box-shadow: 0px 0px 15px -8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 20px;
+            transition: all 1s ease;
+
+            @include mobile{
+                height: 250px;
+                margin: 20px;
+            }
+
+            &.featured{
+                width: 250px;
+                // height: 75%;
+                margin: 0 30px;
+            }
+
+            &:hover{
+                transform: scale(1.1);
+            }
+
+            .top{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+
+                img{
+                    height: 120px;
+                    width: 120px;
+                    border-radius: 50%;
+                    align-items: center;
+                }
+            }
+
+            .center{
+                padding: 10px;
+                // background-color: rgb(233, 197, 204);
+                border-radius: 10px;
+                font-size: 12px;
+                overflow: hidden;
+
+                @include mobile{
+                    display: none;
+                }
+            }
+
+            .btn{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .bottom{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+
+                h3{
+                    margin-bottom: 5px;
+                    @include mobile{
+                        font-size: 15px;
+                    }
+                }
+
+                h4{
+                    @include mobile{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+}

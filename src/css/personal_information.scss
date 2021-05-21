@@ -1,0 +1,190 @@
+@import "global.scss";
+
+.personal_information{
+    // background-color: crimson;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+
+    h1{
+        font-size: 380px;
+        font-weight: 200;
+        color: crimson;
+
+        @include mobile{
+            font-size: 180px;
+            transition: all 2s ease-in-out;
+            transform: rotate(-90deg);
+        }
+    }
+
+    .arrow{
+        height: 50px;
+        position: absolute;
+        cursor: pointer;
+        background-color: rgba(0,0,0,0.2);
+        border-radius: 5px;
+        
+        @include mobile{
+            display: none;
+        }
+
+        &.left{
+            left: 70px;
+            transform: rotateY(180deg);
+        }
+
+        &.right{
+            right: 70px;
+        }
+    }
+
+    .slider{
+        height: 350px;
+        display: flex;
+        position: absolute;
+        left: 0;
+        transition: all 1s ease-in-out;
+
+        @include mobile{
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .container{
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+
+            .item{
+                width: 700px;
+                height: 100%;
+                background-color: white;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0px 0px 15px -8px;
+
+                @include mobile{
+                    width: 90%;
+                    height: 180px;
+                    margin: 5px 0;
+                }
+
+                .left{
+                    flex: 4;
+                    height: 80%;
+                    // background-color: green;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .leftContainer{
+                        width: 90%;
+                        height: 70%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        
+                        .imgContainer{
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 50%;
+                            display: flex;
+                            align-content: center;
+                            justify-content: center;
+                            
+                            @include mobile{
+                                display: none;
+                            }
+                        }
+
+                        h2{
+                            font-size: 20px;
+                            
+                            @include mobile{
+                                font-size: 15px;
+                                align-items: center;
+                            }
+                        }
+                        
+                        p{
+                            font-size: 13px;
+                            
+                            @include mobile{
+                                display: none;
+                            }
+                        }
+
+                        span{
+                            font-size: 12px;
+                            font-weight: 600;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .right{
+                    flex: 8;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+
+                    .leftOfRight{
+                        flex: 2;
+                        height: 100%;
+                        display: flex;
+                        overflow: hidden;
+                        justify-content: center;
+
+                        img{
+                            width: 400px;
+                            position: relative;
+                        }
+                    }
+
+                    .rightOfRight{
+                        flex: 2;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        .up{
+                            flex: 2;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            
+                            img{
+                                // width: 400px;
+                                position: relative;
+                                
+                            }
+                        }
+
+                        .down{
+                            flex: 2;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            
+                            img{
+                                // width: 400px;
+                                position: relative;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

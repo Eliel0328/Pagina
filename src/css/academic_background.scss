@@ -1,3 +1,5 @@
+@import "global.scss";
+
 .academic_background {
     background-color: white;
     display: flex;
@@ -6,6 +8,11 @@
 
     h1{
         font-size: 40px;
+        color: crimson;
+
+        @include mobile{
+            font-size: 20px;
+        }
     }
 
     ul{
@@ -13,6 +20,12 @@
         padding: 0;
         list-style: none;
         display: flex;
+
+        @include mobile{
+            margin: 10px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 
     .container{
@@ -21,10 +34,15 @@
         align-items: center;
         justify-content: center;
         flex-wrap: wrap ;
+        overflow: hidden;
+
+        @include mobile{
+            width: 100%;
+        }
 
         .item{
             width: 220px;
-            height: 250px;
+            height: 350px;
             border-radius: 20px;
             border: 1px solid lightgrey;
             margin: 50px 20px;
@@ -34,6 +52,12 @@
             color: white;
             position: relative;
             transition: all 0.7s ease;
+            cursor: pointer;
+
+            @include mobile{
+                height: 120px;
+                margin: 10px 20px;
+            }
 
             h3{
                 position: absolute;
@@ -48,7 +72,7 @@
             }
 
             &:hover{
-                background-color: #15023a;
+                background-color: $mainColor;
                 img{
                     opacity: 0.2;
                     z-index: 0;
@@ -56,7 +80,26 @@
             }
         }
 
+        .skills{
+            border: 1px solid lightgrey;
+            width: 220px;
+            height: 150px;
+            margin: 10px 20px;
+
+            @include mobile{
+                font-size: 130px;
+                width: 130px;
+                height: 100px;
+                margin: 10px 10px;
+            }
+        }
        
+        .cv{
+            border: 1px solid lightgrey;
+            width: 220px;
+            height: 350px;
+            margin: 50px 20px;
+        }
 
        
     }

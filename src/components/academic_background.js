@@ -1,8 +1,6 @@
 import "../css/academic_background.scss"
 import List from './academic_background_list'
-import villa from '../img/logoVilla.png'
-import escom from '../img/logoEscom.png'
-import cecyteo from '../img/logoCecyteo.jpg'
+import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import {
     cvList,
@@ -27,6 +25,10 @@ const Academic_background = () => {
         }
     ];
 
+    const descargarCV = () => {
+        document.location = '../cv.pdf'
+    }
+
     useEffect(() => {
         switch (selected) {
             case "formacion":
@@ -37,6 +39,8 @@ const Academic_background = () => {
                 break;
             case "cv":
                 setData(cvList);
+                break;
+            default:
                 break;
         }
     }, [selected]);
@@ -55,31 +59,17 @@ const Academic_background = () => {
                 ))}
             </ul>
             <div className="container">
-                {/* {data.map((d) => (
-                    <div className="item">
+                {data.map((d) => (
+                    <div className={selected === 'skills' ? "item skills" : (selected === 'cv' ? 'item cv' : 'item')}>
                         <img
                             src={d.img}
                             alt=""
+                            onClick={d.clic !== null ? () => (d.cv === true ? descargarCV() : window.open(d.clic, "_blank")) : null}
                         />
+                        <a href="/home/emile/Documentos/Crypto/portafolio/src/cv.pdf" download="CV.pdf"> descargar archivo</a>
                         <h3>{d.title}</h3>
                     </div>
-                ))} */}
-
-                <div className="item">
-                    <img src={villa} alt=""
-                        onClick={() => window.open("https://www.facebook.com/villadelosninosguadalajaraoficial/", "_blank")} />
-                    <h3>Villa de los Niños</h3>
-                </div>
-                <div className="item">
-                    <img src={escom} alt=""
-                        onClick={() => window.open("https://www.escom.ipn.mx/", "_blank")} />
-                    <h3>Escuela Superior de Cómputo</h3>
-                </div>
-                <div className="item">
-                    <img src={cecyteo} alt=""
-                        onClick={() => window.open("http://www.cecyteo.edu.mx/Nova/Site/OfertaEducativa?e=96&c=PLANTEL%20N%C3%9AM.%2028%20AYOTZINTEPEC&longitud=-96.1288220&latitud=17.6728730", "_blank")} />
-                    <h3>Cecyteo PL. 28</h3>
-                </div>
+                ))}
             </div>
         </div>
 
